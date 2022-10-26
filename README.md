@@ -29,6 +29,8 @@ MOVEMENTANDO JOGADOR ATRAVES DA INSTALAÇÃO DO PACOTE DE SISTEMA DE ENTRADA
 
 1) Adicione um RigidBody ao Player
 
+	    selecione o player > add componente > Rigidibory
+
 2) Instale o pacote do sistema de entrada
 
 	   Windows >  Package Manager > Select All Package Manager > Input System > Install
@@ -93,4 +95,40 @@ MOVEMENTANDO JOGADOR ATRAVES DA INSTALAÇÃO DO PACOTE DE SISTEMA DE ENTRADA
             Vector3 movement = new Vector3(movementX, 0.0f, movementY);
             rb.AddForce(movement * speed);
         }
+
+<br>
+FAZER COM QUE A CAMERA SIGA O PLAYER
+<br>
+
+1) Movendo a câmera para seguir o jogador
+
+        Main Camera > Transform Position =   X  0 , Y 10  e  Z -10
+        Main Camera > Transform rotation =   X  45 , Y 0  e  Z 0
+
+2) Adicione o componete a camera 
+	
+	create new script > chamado "CameraController"
+
+3) Escreva um script CameraController
+
+
+        public class CameraController : MonoBehaviour
+        {
+            private GameObject player;
+            private Vector3 offset;
+            void Start()
+            {
+                offset = transform.position - player.transform.position;
+            }
+
+            void LateUpdate()
+            {
+                transform.position = player.transform.position + offset;
+            }
+        }
+
+4) Referenciar o GameObject do jogador
+
+	Unity > Selecione a Camera >  Em player None (Game Object) > Anexar o Player
+
 
