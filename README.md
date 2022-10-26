@@ -23,6 +23,7 @@ create new project 3d URP
        selecione a pasta > create > Material
        De o nome para o novo material e escolha uma cor para ele
        Arraste esse material para o objeto desejado
+       
 <br>     
 MOVEMENTANDO JOGADOR ATRAVES DA INSTALAÇÃO DO PACOTE DE SISTEMA DE ENTRADA
 <br>
@@ -148,7 +149,173 @@ CONFIGURAÇÃO DA ÁREA DO JOOGO
        arraste todos as paredes para o Empaty Game Object walls
        
        
-       
+<br>
+CRIANDO INTENS COLECIONAVEIS
+<br>    
        
 
+1) Crie um GameObject colecionável
 
+        crie um cubo
+        adiconado material dar cor amarelo
+        altere o posicionamento e a rotaçao
+
+2) Gire o PickUp GameObject
+
+        crie um script chamado "Rotator" anexa ao PickUp
+
+        public class Rotator : MonoBehaviour
+        {
+
+            void Update()
+            {
+                transform.Rotate(new Vector3(15, 30, 5) * Time.deltaTime);
+            }
+        }
+
+3) Faça pickup um Prefab
+
+	    criar uma pasta chamada prefabs e arrastar o pickup para dentro
+
+4) Adicione mais colecionáveis
+
+	    Create Empaty Object chamado PickUp Parent
+	    Arraste o objeto PickUp para dentro de PickUp Parent
+	    Selecione o PickUp e duplique varios em volta do player
+	    
+
+<br>
+DETECTANDO COLISOES DO OBJETOS
+<br>    
+
+1) Desativar pickUps com OnTriggerEnter
+
+        acesse o script do PlayerController para desabilitar o objeto
+
+        private void OnTriggerEnter(Collider other)
+        {
+            other.gameObject.SetActive(false);
+        }
+
+2) Adicione uma tag ao Pré-Fabricado pickup
+
+        selecione o objeto no pre fabricado
+        insperctor> tag > add tag > crie um tag chamada "PickUp"
+        selecione o objeto no pre fabricado > add a tag criada
+
+3) Escreva uma declaração condicional
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("PickUp"))
+            {
+                other.gameObject.SetActive(false);
+            }
+        }
+
+4) Defina os Colisores de Captação como gatilhos
+
+	    selecione o objeto no pre fabricado e aplique o trigger
+	    no seu componente box colide > marque a caixa "is trigger"
+
+5) Adicione um componente rigidbody ao Pré-fabricador
+
+	    selecione o objeto no pre fabricado
+	    adicione o componente Rigidbory
+	    desmaque a caixa de gravidade desse componente
+	    habilite o is Kinematic
+
+<br>
+INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
+<br>     
+
+1) Armazene o valor das PickUps coletadas
+
+        no script playcontroller declarar uma variavel para contar os objetos
+        inicie a variavel no metodo start e faça a contagem onde esta sendo
+        verificado a colisão
+
+        private int count;
+
+        void Start()
+        {
+            count = 0;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("PickUp"))
+            {
+                other.gameObject.SetActive(false);
+                count = +1;
+            }
+        }
+
+2) Crie um elemento de texto de interface do usuário
+
+        criar > UI > Text - Text Mash Pro
+        Import TMP Enssentials
+        Nomei para CountText
+
+3) Exibir o valor da contagem
+
+        abrar o script PlayerController
+
+        public TextMeshProUGUI countText;
+
+        void SetCountText()
+        {
+            countText.text = "Count " + count.ToString();
+        }
+
+        void Start()
+        {
+            SetCountText();
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("PickUp"))
+            {
+                other.gameObject.SetActive(false);
+                count = count + 1;
+
+                SetCountText();
+            }
+        }
+
+3) selecione o player na unity > seu componente > Script PlayerController
+
+       arraste o CountText para dentro do none objetco refente ao couttext
+
+4) No inspector do EventSystem do CountText
+
+       click em > Replace with inputSystemUIInputMoudule
+
+5) Crie uma mensagem final de jogo
+
+        criar > UI > Text - Text Mash Pro
+        Import TMP Enssentials
+        Nomei para Win Text
+
+6) Abra o script PlayerController
+
+     public GameObject winTextObject;
+
+        void Start()
+        {
+            winTextObject.SetActive(false);
+        }
+
+        void SetCountText()
+        {
+            countText.text = "Count " + count.ToString();
+            if (count >= 8)
+            {
+                winTextObject.SetActive(true);
+            }
+        }
+
+7) selecione o player na unity > seu componente > Script PlayerController
+
+       arraste o Win Text para dentro do none objetco refente ao Win Text
