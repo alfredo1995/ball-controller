@@ -130,6 +130,25 @@ FAZER COM QUE A CAMERA SIGA O PLAYER
 
        Unity > Selecione a Camera >  Em player None (Game Object) > Anexar o Player
 
+<br>
+CONFIGURAÇÃO DA ÁREA DO JOOGO
+<br>
 
+1) Crie uma parede para o campo de jogo
+
+       crie um Empaty Game Object > chame de WALLS	
+       
+       create > 3d objecto > cubo > nomei para west wall
+       position > X  -10  ,  Y  0  , Z  0
+       scale    > X  0.5  ,  Y  2  , Z  20.5 
+       adicione um material nesse objeto com a cor desejada
+       
+       criar os wall refente ao lados oeste, north e south ate fechar um quadro no plano com paredes
+       
+       arraste todos as paredes para o Empaty Game Object walls
+       
+       
+       
+       
 
 
