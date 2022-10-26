@@ -105,12 +105,11 @@ FAZER COM QUE A CAMERA SIGA O PLAYER
         Main Camera > Transform Position =   X  0 , Y 10  e  Z -10
         Main Camera > Transform rotation =   X  45 , Y 0  e  Z 0
 
-2) Adicione o componete a camera 
-	
-	create new script > chamado "CameraController"
+2) Adicione o componete a camera 	
+
+        create new script > chamado "CameraController"
 
 3) Escreva um script CameraController
-
 
         public class CameraController : MonoBehaviour
         {
@@ -129,6 +128,8 @@ FAZER COM QUE A CAMERA SIGA O PLAYER
 
 4) Referenciar o GameObject do jogador
 
-	Unity > Selecione a Camera >  Em player None (Game Object) > Anexar o Player
+       Unity > Selecione a Camera >  Em player None (Game Object) > Anexar o Player
+
+
 
 
