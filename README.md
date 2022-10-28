@@ -15,7 +15,7 @@ create new project 3d URP
     
 2) Crie um GameObject de jogadores
  
-       gameObjectos > 3d object > Sphere
+       gameObjectos > 3d object > Sphere 
        nomeie para Player
      
 3) Adicione cores com materiais
