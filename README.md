@@ -396,4 +396,19 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 
 	Hierarchy > Game Controller > Componente Script GameController.cs > Campo Game Over > arrastar o img Game Over
 
+8) Implementado a logica do RESERT utilizando o script GameController.cs
+	
+	Importar biblioteca para utilizaro restart
+	criar uma o metodo restart
+	
+	
+	using UnityEngine.SceneManagement;
 
+	public void ResertGame()
+        {
+            //pegando a cena atual e recarregando ela
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+	
+	
