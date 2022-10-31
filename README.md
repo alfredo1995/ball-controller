@@ -420,4 +420,4 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 
 10) ADD Cena ao Scene in Build
 
-File > Build Setting > Add Open Scenes > Procure a pasta Scena > Salva a scena e der um nome a ela
+	File > Build Setting > Add Open Scenes > Procure a pasta Scena > Salva a scena e der um nome a ela
