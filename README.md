@@ -326,4 +326,19 @@ INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
 TELA DE GAME OVER OU RESERT
 <br>
 
+1) Create um Carnva
+
+	Create > UI > Image > Amplie a imagem ate cobrir todo cenario
+	selecione o image criado > create > UI > button
+	Deixar o gameoject criado da imagem desativado no inspector
+	
+2) create script para desativar e ativar objeto atrave de um Singleton
+
+	Singleton é um design pattern usado quando você precisa chamar os métodos e variáveis
+	de uma classe sem precisar declarar ela dentro de outra classe.
+
+	create > script > GameController.cs > abra o script
+	
+3) Singleton acessando variavel e metodo de outro script chamados pela vararivel criada instance;
+
 
