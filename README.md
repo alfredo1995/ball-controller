@@ -417,3 +417,7 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 
 	Hierarchy > Game Over > Button Resert > On Click > List Empty > add > arraste o Objeto Game Controller para referncia
 	passe a função > None function > add GameController.cs > RestartGamer()
+
+10) ADD Cena ao Scene in Build
+
+File > Build Setting > Add Open Scenes > Procure a pasta Scena > Salva a scena e der um nome a ela
