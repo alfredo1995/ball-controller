@@ -328,8 +328,8 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 
 1) Create um Carnva
 
-	Create > UI > Image > Amplie a imagem ate cobrir todo cenario
-	selecione o image criado > create > UI > button
+	Create > UI > Image > Amplie a imagem ate cobrir todo cenario > chamar a imagem de game over
+	selecione o image criado > create > UI > button > chamar o botao de Restart
 	Deixar o gameoject criado da imagem desativado no inspector
 	
 2) create script para desativar e ativar objeto atrave de um Singleton
@@ -411,4 +411,9 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
             SceneManager.LoadScene(scene.name);
         }
 	
-	
+9) Referenciando o metodo resert no botao
+
+	utilizar um unity event onclick para chamar um metodo ao ser clicado
+
+	Hierarchy > Game Over > Button Resert > On Click > List Empty > add > arraste o Objeto Game Controller para referncia
+	passe a função > None function > add GameController.cs > RestartGamer()
