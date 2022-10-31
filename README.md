@@ -341,4 +341,28 @@ TELA DE GAME OVER OU RESERT
 	
 3) Singleton acessando variavel e metodo de outro script chamados pela vararivel criada instance;
 
+	public class GameController : MonoBehaviour
+	{
+	    public static GameController instance;
+	    private void Awake()
+	    {
+		instance = this;
+	    }
+	}
+
+4) Criar uma variavel e metodo p/ referencia o objeto gameover e ativalo ou desativalo
+
+	public GameObject gameOver;
+	
+	public void ShowGameOver()
+        {
+            gameOver.SetActive(true);
+        }
+	
+5) Aplicar box colider nos objetos que será dectado a colisão e assim chamar o metodo ShowGameOver para ser ativado
+
+	adicione um box colider nos walls 
+
+6) create um novo script chamado DetectCollisions.cs anexando em cada objeto wall
+
 
