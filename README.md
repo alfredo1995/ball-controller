@@ -415,7 +415,7 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 
 	utilizar um unity event onclick para chamar um metodo ao ser clicado
 
-	Hierarchy > Game Over > Button Resert > On Click > List Empty > add > arraste o Objeto Game Controller para referncia
+	Hierarchy > Game Over > Button Resert > On Click > List Empty > add > arraste o Objeto Game Controller para referencia
 	passe a função > None function > add GameController.cs > RestartGamer()
 
 10) ADD Cena ao Scene in Build
