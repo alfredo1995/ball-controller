@@ -328,96 +328,96 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 
 1) Create um Carnva
 
-	Create > UI > Image > Amplie a imagem ate cobrir todo cenario > chamar a imagem de game over
-	selecione o image criado > create > UI > button > chamar o botao de Restart
-	Deixar o gameoject criado da imagem desativado no inspector
+		Create > UI > Image > Amplie a imagem ate cobrir todo cenario > chamar a imagem de game over
+		selecione o image criado > create > UI > button > chamar o botao de Restart
+		Deixar o gameoject criado da imagem desativado no inspector
 	
 2) create script para desativar e ativar objeto atrave de um Singleton
 
-	Singleton é um design pattern usado quando você precisa chamar os métodos e variáveis
-	de uma classe sem precisar declarar ela dentro de outra classe.
+		Singleton é um design pattern usado quando você precisa chamar os métodos e variáveis
+		de uma classe sem precisar declarar ela dentro de outra classe.
 
-	create > gameobjeto > chamar esse gameobjet de "Game Controller"
-	create > script > GameController.cs > anexar script no gameobjeto "Game Controller"
+		create > gameobjeto > chamar esse gameobjet de "Game Controller"
+		create > script > GameController.cs > anexar script no gameobjeto "Game Controller"
 	
 3)  GameController.cs criar um Singleton acessando variavel e metodo de outro script chamados pela vararivel criada instance;
 
-	public class GameController : MonoBehaviour
-	{
-	    public static GameController instance;
-	    
-	    private void Awake()
-	    {
-		instance = this;
-	    }
-	}
+		public class GameController : MonoBehaviour
+		{
+		    public static GameController instance;
+
+		    private void Awake()
+		    {
+			instance = this;
+		    }
+		}
 
 4) Criar uma variavel publica gameOver e metodo ShowGameOver p/ referencia o objeto img gameover e ativalo ou desativalo
 	
-	public class GameController : MonoBehaviour
-	{
-	    public GameObject gameOver;
-	    
-	    public static GameController instance;
-	    
-	    private void Awake()
-	    {
-		instance = this;
-	    }
+		public class GameController : MonoBehaviour
+		{
+		    public GameObject gameOver;
 
-	    public void ShowGameOver()
-	    {
-		gameOver.SetActive(true);
-	    }
-	}
+		    public static GameController instance;
+
+		    private void Awake()
+		    {
+			instance = this;
+		    }
+
+		    public void ShowGameOver()
+		    {
+			gameOver.SetActive(true);
+		    }
+		}
 	
 5) Aplicar box colider nos objetos que será dectado a colisão e assim chamar o metodo ShowGameOver para ser ativado
 
-	adicione um box colider nos walls 
+		adicione um box colider nos walls 
 
 6) create um novo script chamado DetectCollisions.cs anexando em cada objeto wall q será dectado a colisão
 	
-	criar metodo para detectar a colisão nos objetos, identificando quem ira colidir atraves da tag
-	chamando o metodo ShowGameOver da class GameController atraves da instacia
-	
-	public class DetectedCollision : MonoBehaviour
-	{
-	    public void OnCollisionEnter(Collision collision)
-	    {
-		if (collision.gameObject.tag == "Player")
+		criar metodo para detectar a colisão nos objetos, identificando quem ira colidir atraves da tag
+		chamando o metodo ShowGameOver da class GameController atraves da instacia
+
+		public class DetectedCollision : MonoBehaviour
 		{
-		    //Debug.Log("Game Over");
-		    GameController.instance.ShowGameOver();
+		    public void OnCollisionEnter(Collision collision)
+		    {
+			if (collision.gameObject.tag == "Player")
+			{
+			    //Debug.Log("Game Over");
+			    GameController.instance.ShowGameOver();
+			}
+		    }
 		}
-	    }
-	}
 
 7) Atribua o campo game objeto no objeto Game Controller
 
-	Hierarchy > Game Controller > Componente Script GameController.cs > Campo Game Over > arrastar o img Game Over
+		Hierarchy > Game Controller > Componente Script GameController.cs > Campo Game Over > arrastar o img Game Over
 
 8) Implementado a logica do RESERT utilizando o script GameController.cs
 	
-	Importar biblioteca para utilizaro restart
-	criar uma o metodo restart
-	
-	
-	using UnityEngine.SceneManagement;
+		Importar biblioteca para utilizaro restart
+		criar uma o metodo restart
 
-	public void ResertGame()
-        {
-            //pegando a cena atual e recarregando ela
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
-        }
+
+		using UnityEngine.SceneManagement;
+
+		public void ResertGame()
+		{
+		    //pegando a cena atual e recarregando ela
+		    Scene scene = SceneManager.GetActiveScene();
+		    SceneManager.LoadScene(scene.name);
+		}
 	
 9) Referenciando o metodo resert no botao
 
-	utilizar um unity event onclick para chamar um metodo ao ser clicado
+		utilizar um unity event onclick para chamar um metodo ao ser clicado
 
-	Hierarchy > Game Over > Button Resert > On Click > List Empty > add > arraste o Objeto Game Controller para referencia
-	passe a função > None function > add GameController.cs > RestartGamer()
+		Hierarchy > Game Over > Button Resert > On Click > List Empty > add > arraste o Objeto Game Controller para referencia
+		passe a função > None function > add GameController.cs > RestartGamer()
 
 10) ADD Cena ao Scene in Build
 
-	File > Build Setting > Add Open Scenes > Procure a pasta Scena > Salva a scena e der um nome a ela
+		File > Build Setting > Add Open Scenes > Procure a pasta Scena > Salva a scena e der um nome a ela
