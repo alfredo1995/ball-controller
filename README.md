@@ -376,7 +376,10 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 	adicione um box colider nos walls 
 
 6) create um novo script chamado DetectCollisions.cs anexando em cada objeto wall q será dectado a colisão
-
+	
+	criar metodo para detectar a colisão nos objetos, identificando quem ira colidir atraves da tag
+	chamando o metodo ShowGameOver da class GameController atraves da instacia
+	
 	public class DetectedCollision : MonoBehaviour
 	{
 	    public void OnCollisionEnter(Collision collision)
@@ -389,6 +392,8 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 	    }
 	}
 
-7) Acione uma mensagem de "Game Over"
+7) Atribua o campo game objeto no objeto Game Controller
+
+	Hierarchy > Game Controller > Componente Script GameController.cs > Campo Game Over > arrastar o img Game Over
 
 
