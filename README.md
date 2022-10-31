@@ -323,7 +323,7 @@ INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
        
        
 <br>
-TELA DE GAME OVER OU RESERT
+TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 <br>
 
 1) Create um Carnva
@@ -337,32 +337,58 @@ TELA DE GAME OVER OU RESERT
 	Singleton é um design pattern usado quando você precisa chamar os métodos e variáveis
 	de uma classe sem precisar declarar ela dentro de outra classe.
 
-	create > script > GameController.cs > abra o script
+	create > gameobjeto > chamar esse gameobjet de "Game Controller"
+	create > script > GameController.cs > anexar script no gameobjeto "Game Controller"
 	
-3) Singleton acessando variavel e metodo de outro script chamados pela vararivel criada instance;
+3)  GameController.cs criar um Singleton acessando variavel e metodo de outro script chamados pela vararivel criada instance;
 
 	public class GameController : MonoBehaviour
 	{
 	    public static GameController instance;
+	    
 	    private void Awake()
 	    {
 		instance = this;
 	    }
 	}
 
-4) Criar uma variavel e metodo p/ referencia o objeto gameover e ativalo ou desativalo
-
-	public GameObject gameOver;
+4) Criar uma variavel publica gameOver e metodo ShowGameOver p/ referencia o objeto img gameover e ativalo ou desativalo
 	
-	public void ShowGameOver()
-        {
-            gameOver.SetActive(true);
-        }
+	public class GameController : MonoBehaviour
+	{
+	    public GameObject gameOver;
+	    
+	    public static GameController instance;
+	    
+	    private void Awake()
+	    {
+		instance = this;
+	    }
+
+	    public void ShowGameOver()
+	    {
+		gameOver.SetActive(true);
+	    }
+	}
 	
 5) Aplicar box colider nos objetos que será dectado a colisão e assim chamar o metodo ShowGameOver para ser ativado
 
 	adicione um box colider nos walls 
 
-6) create um novo script chamado DetectCollisions.cs anexando em cada objeto wall
+6) create um novo script chamado DetectCollisions.cs anexando em cada objeto wall q será dectado a colisão
+
+	public class DetectedCollision : MonoBehaviour
+	{
+	    public void OnCollisionEnter(Collision collision)
+	    {
+		if (collision.gameObject.tag == "Player")
+		{
+		    //Debug.Log("Game Over");
+		    GameController.instance.ShowGameOver();
+		}
+	    }
+	}
+
+7) Acione uma mensagem de "Game Over"
 
 
