@@ -320,3 +320,10 @@ INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
 7) selecione o player na unity > seu componente > Script PlayerController
 
        arraste o Win Text para dentro do none objetco refente ao Win Text
+       
+       
+<br>
+TELA DE GAME OVER OU RESERT
+<br>
+
+
