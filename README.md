@@ -421,3 +421,23 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 10) ADD Cena ao Scene in Build
 
 		File > Build Setting > Add Open Scenes > Procure a pasta Scena > Salva a scena e der um nome a ela
+		
+11) UI DIEGÉTIC
+
+		private void OnTriggerEnter(Collider other)
+		    {
+			if (other.gameObject.CompareTag("Parede"))
+			{
+			    other.gameObject.GetComponent<Renderer>().material.color = Color.red;
+			}
+		    }
+
+		       private void OnTriggerExit(Collider other)
+		    {
+			if (other.gameObject.CompareTag("Parede"))
+			{
+			    other.gameObject.GetComponent<Renderer>().material.color = Color.green;
+			}
+		    }
+
+		coloque esse script em um script da bola
