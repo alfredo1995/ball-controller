@@ -17,7 +17,7 @@ create new project 3d URP
  
        gameObjectos > 3d object > Sphere 
        nomeie para Player
-     
+      
 3) Adicione cores com materiais
  
        cria um pasta > Material
