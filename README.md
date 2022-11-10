@@ -441,3 +441,29 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 		    }
 
 		coloque esse script em um script da bola
+		
+		
+		
+		
+--------------------
+
+
+obs: metodo sigleton , instanciar objetos em outra clase,(acessa o scirpt passaroDestroi.cs, pegar o metodo ContadorPassaros(); que esta no arquivo controleCena.cs)
+
+    controleCena.cs
+    
+    
+    public static ControleCena INSTANCE;
+    public void Awake()
+    {
+        INSTANCE = this;
+    }
+    
+    passaroDestroi.cs
+    
+    
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+            ControleCena.INSTANCE.ContadorPassaros();
+    }
+
