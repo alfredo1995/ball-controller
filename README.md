@@ -23,9 +23,9 @@ create new project 3d URP
        De o nome para o novo material e escolha uma cor para ele
        Arraste esse material para o objeto desejado
        
-<br> <br>      
+<br>   
 MOVEMENTANDO JOGADOR ATRAVES DA INSTALAÇÃO DO PACOTE DE SISTEMA DE ENTRADA
-<br><br>  
+<br>
 
 1) Adicione um RigidBody ao Player
 
@@ -96,9 +96,9 @@ MOVEMENTANDO JOGADOR ATRAVES DA INSTALAÇÃO DO PACOTE DE SISTEMA DE ENTRADA
             rb.AddForce(movement * speed);
         }
 
-<br><br>  
+<br>  
 FAZER COM QUE A CAMERA SIGA O PLAYER
-<br><br>  
+<br> 
 
 1) Movendo a câmera para seguir o jogador
 
@@ -130,9 +130,9 @@ FAZER COM QUE A CAMERA SIGA O PLAYER
 
        Unity > Selecione a Camera >  Em player None (Game Object) > Anexar o Player
 
-<br><br>  
+<br> 
 CONFIGURAÇÃO DA ÁREA DO JOOGO
-<br><br>  
+<br> 
 
 1) Crie uma parede para o campo de jogo
 
@@ -148,9 +148,9 @@ CONFIGURAÇÃO DA ÁREA DO JOOGO
        arraste todos as paredes para o Empaty Game Object walls
        
        
-<br><br>  
+<br>  
 CRIANDO INTENS COLECIONAVEIS
-<br><br>  
+<br> 
        
 
 1) Crie um GameObject colecionável
@@ -183,9 +183,9 @@ CRIANDO INTENS COLECIONAVEIS
 	    Selecione o PickUp e duplique varios em volta do player
 	    
 
-<br><br>  
+<br> 
 DETECTANDO COLISOES DO OBJETOS
-<br><br>      
+<br>      
 
 1) Desativar pickUps com OnTriggerEnter
 
@@ -224,9 +224,9 @@ DETECTANDO COLISOES DO OBJETOS
 	    desmaque a caixa de gravidade desse componente
 	    habilite o is Kinematic
 
-<br><br>  
+<br> 
 INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
-<br><br>     
+<br>   
 
 1) Armazene o valor das PickUps coletadas
 
@@ -291,9 +291,9 @@ INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
 
        click em > Replace with inputSystemUIInputMoudule
 
-<<br><br>  
+<<br> 
 Crie uma mensagem final de jogo
-<br><br>  
+<br>
 
         criar > UI > Text - Text Mash Pro
         Import TMP Enssentials
