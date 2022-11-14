@@ -291,13 +291,15 @@ INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
 
        click em > Replace with inputSystemUIInputMoudule
 
-5) Crie uma mensagem final de jogo
+<<br><br>  
+Crie uma mensagem final de jogo
+<br><br>  
 
         criar > UI > Text - Text Mash Pro
         Import TMP Enssentials
         Nomei para Win Text
 
-6) Abra o script PlayerController
+1) Abra o script PlayerController
 
      public GameObject winTextObject;
 
@@ -315,7 +317,7 @@ INTERFACE DO USUARIO PARA EXIBIR PONTUAÇÃO
             }
         }
 
-7) selecione o player na unity > seu componente > Script PlayerController
+2) selecione o player na unity > seu componente > Script PlayerController
 
        arraste o Win Text para dentro do none objetco refente ao Win Text
        
