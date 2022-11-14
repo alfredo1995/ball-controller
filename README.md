@@ -1,5 +1,3 @@
-# programando jogo unity onde deve-se controlar a bola para coletar os pontos
-
 <br>  
 
 create new project 3d URP
@@ -50,43 +48,43 @@ MOVEMENTANDO JOGADOR ATRAVES DA INSTALAÇÃO DO PACOTE DE SISTEMA DE ENTRADA
 
 	    Using UnityEngine.InputSystem;
 
-        void OnMove(InputValue movementValue)
-        {
-        }
+            void OnMove(InputValue movementValue)
+            {
+            }
 
 6) Aplique dados de entrada ao Jogador
 
-        private Rigidbody rb;
+           private Rigidbody rb;
 
-        void Start()
-        {
-            rb = GetComponent<Rigidbody>();
-        }
+           void Start()
+          {
+             rb = GetComponent<Rigidbody>();
+          }
 
-        void OnMove(InputValue movementValue)
-        {
-            Vector2 movementVector = movementValue.Get<Vector2>();
-        }
+          void OnMove(InputValue movementValue)
+          {
+             Vector2 movementVector = movementValue.Get<Vector2>();
+          }
 
 7) Aplique força ao Jogador FixeUpdate
 
-        private Rigidbody rb;
-        private float movementX;
-        private float movementY;
+          private Rigidbody rb;
+          private float movementX;
+          private float movementY;
 
-        void OnMove(InputValue movementValue)
-        {
-            Vector2 movementVector = movementValue.Get<Vector2>();
+          void OnMove(InputValue movementValue)
+          {
+             Vector2 movementVector = movementValue.Get<Vector2>();
 
-            movementX = movementVector.x;
-            movementY = movementVector.y;
-        }
-
-        void FixedUpdate()
-        {
-            Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-            rb.AddForce(movement);
-        }
+             movementX = movementVector.x;
+             movementY = movementVector.y;
+         }
+ 
+         void FixedUpdate()
+         {
+             Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+             rb.AddForce(movement);
+         }
 
 8) Velocidade de movimento do jogador
 
@@ -443,9 +441,6 @@ TELA DE GAME OVER E RESERT ATRAVES DO DECTECTOR DE COLISÃO
 		coloque esse script em um script da bola
 		
 		
-		
-		
---------------------
 
 
 obs: metodo sigleton , instanciar objetos em outra clase,(acessa o scirpt passaroDestroi.cs, pegar o metodo ContadorPassaros(); que esta no arquivo controleCena.cs)
